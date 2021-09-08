@@ -7,6 +7,7 @@ import { AllPhonebookEntriesComponent } from './pages/all-phonebook-entries/all-
 const routes: Routes = [
 	{ path: '', pathMatch: 'full', redirectTo: '/' },
 
+	{ path: 'phonebook-update/:id', component: NewPhonebookEntryComponent },
 	{ path: 'phonebook-entry', component: NewPhonebookEntryComponent },
 	{ path: '', component: AllPhonebookEntriesComponent },
 ];

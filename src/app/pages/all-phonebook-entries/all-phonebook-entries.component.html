@@ -1,2 +1,31 @@
-<p>all-phonebook-entries works!</p>
-<a routerLink="/phonebook-entry">Add new phonebook entry</a>
+<div class="container">
+	<h4 class="h4 text-center">Contacts</h4>
+	<div class="form-inline md-form form-sm d-flex justify-content-center my-3">
+		<mdb-icon fas icon="search" aria-hidden="true"></mdb-icon>
+		<input class="form-control form-control-sm ml-2 w-75" style="max-width: 400px;" type="text" [(ngModel)]="search" placeholder="Search Contact(s)" aria-label="Search" mdbInput (ngModelChange)="searchContact($event)">
+	</div>
+	<a mdbBtn color="info" block="true" size="sm" class="mb-4 w-75" style="max-width: 400px;" type="submit" routerLink="/phonebook-entry">Add New Phonebook</a>
+
+	<div *ngIf="__phonebook.other_errors.message" class="alert alert-danger" role="alert">{{__phonebook.other_errors.message}}</div>
+	
+	<div class="row my-3" *ngFor="let phonebook of phonebooks">
+		<div class="col-10 row">
+			<div class="col-12">
+				<small><strong>Name:&nbsp;</strong></small>
+				<small class="text-muted">{{ phonebook.name || 'unknown' | titlecase }}</small>
+			</div>
+			<div class="col-12">
+				<small><strong>Phone Number:&nbsp;</strong></small>
+				<small class="text-muted"><span *ngIf="phonebook.phone">+27</span>{{ phonebook.phone || 'null' }}</small>
+			</div>
+			<div class="col-12" *ngIf="phonebook.email">
+				<small><strong>Email:&nbsp;</strong></small>
+				<small class="text-muted">{{ phonebook.email }}</small>
+			</div>
+		</div>
+		<div class="col-2 d-flex align-items-center" style="gap: .5em;">
+			<a class="text-warning" routerLink="/phonebook-update/{{phonebook.id}}"><mdb-icon far icon="edit"></mdb-icon></a>
+			<a class="text-danger" (click)="deleteContact(phonebook)"><mdb-icon far icon="trash-alt"></mdb-icon></a>
+		</div>
+	</div>
+</div>
