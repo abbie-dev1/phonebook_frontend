@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Open+Sans+Condensed:wght@300&display=swap');
+@import '~ngx-toastr/toastr';
+
+*{
+	font-family: 'Open Sans Condensed', sans-serif;
+	box-sizing: border-box;
+	transition: 1s ease-in;
+	padding: 0;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	font-family: 'Caveat', cursive !important;
+}
+
+small{
+	font-size: 16px;
+}

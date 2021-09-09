@@ -1,8 +1,8 @@
-<div class="container">
-	<a routerLink="/">Back Home</a>
+<div class="container py-3">
+	<a mdbBtn color="blue-grey" size="sm" outline="true" class="mb-4 shadow-none" routerLink="/">&#8678;&nbsp;Back Home</a>
 	<!-- Default form login -->
-	<form class="text-center border border-light p-5" [formGroup]="phonebookForm">
-		<p class="h4 mb-4">Phonebook Entry</p>
+	<form class="text-center border border-light rounded p-5" [formGroup]="phonebookForm">
+		<h1 class="h1 mb-4">Phonebook Entry</h1>
 
 		<div class="form-group mb-3">
 			<input type="text" class="form-control" formControlName="name" placeholder="Name">

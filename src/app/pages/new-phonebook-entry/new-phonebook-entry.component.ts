@@ -34,8 +34,10 @@ export class NewPhonebookEntryComponent implements OnInit {
 		await this.__phonebook.getOnePhonebook(this.phonebookId.id).then((res: any) => {
 			phonebook = res;
 		}).catch((err: any) => {
-			this.__phonebook.showOtherErrors(err.error);
-			this.__route.navigate(['/']);
+			this.__phonebook.showError(err.error.message);
+			setTimeout(() => {
+				this.__route.navigate(['/']);
+			}, 1000);
 		})
 
 		this.phonebookForm.patchValue(phonebook);
@@ -43,6 +45,7 @@ export class NewPhonebookEntryComponent implements OnInit {
 	}
 
 	submitPhoneBootEntry(){
+		if (this.phonebookForm.value.email.trim() === "") delete this.phonebookForm.value.email;
 		if (!this.phonebookId.id) return this.__phonebook.addNewPhonebook(this.phonebookForm.value);
 		return this.__phonebook.updateOnePhonebook(this.phonebookForm.value);
 	}
