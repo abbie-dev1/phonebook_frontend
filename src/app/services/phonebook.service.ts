@@ -70,10 +70,10 @@ export class PhonebookService {
 	}
 
 	showSuccess(message: string){
-		this.__toast.success(message, "Successful")
+		this.__toast.success(message, "Successful");
 	}
 
 	showError(message: string){
-		this.__toast.error(message, "Error")
+		this.__toast.error(message, "Error");
 	}
 }

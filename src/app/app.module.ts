@@ -17,13 +17,15 @@ import { AllPhonebookEntriesComponent } from './pages/all-phonebook-entries/all-
 // =============================================================== External Dependencies ===============================================================
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ToastrModule } from 'ngx-toastr';
+import { OnePhonebookComponent } from './pages/one-phonebook/one-phonebook.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		NewPhonebookEntryComponent,
-		AllPhonebookEntriesComponent
+		AllPhonebookEntriesComponent,
+  OnePhonebookComponent
 	],
 	imports: [
 		BrowserModule,

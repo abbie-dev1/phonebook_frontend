@@ -28,7 +28,7 @@ export class NewPhonebookEntryComponent implements OnInit {
 	async load(){
 		let phonebook: any = {};
 		this.phonebookId = this.__activatedRoute.snapshot.params;
-
+		
 		if (!this.phonebookId.id) return;
 
 		await this.__phonebook.getOnePhonebook(this.phonebookId.id).then((res: any) => {

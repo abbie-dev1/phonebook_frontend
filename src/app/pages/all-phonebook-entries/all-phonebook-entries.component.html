@@ -10,18 +10,9 @@
 	<ng-container *ngIf="phonebooks.length && phonebooks.length > 0; else elseTemplate">
 		<div class="row my-3 border-top" *ngFor="let phonebook of phonebooks">
 			<div class="col-10 row">
-				<div class="col-12">
-					<small><strong>Name:&nbsp;</strong></small>
-					<small class="text-muted">{{ phonebook.name || 'unknown' | titlecase }}</small>
-				</div>
-				<div class="col-12">
-					<small><strong>Phone Number:&nbsp;</strong></small>
-					<small class="text-muted"><span *ngIf="phonebook.phone">+27</span>{{ phonebook.phone || 'null' }}</small>
-				</div>
-				<div class="col-12" *ngIf="phonebook.email">
-					<small><strong>Email:&nbsp;</strong></small>
-					<small class="text-muted">{{ phonebook.email }}</small>
-				</div>
+				<a class="col-12" routerLink="/phonebook/{{phonebook.id}}" >
+					<small>{{ phonebook.name || 'unknown' | titlecase }}</small>
+				</a>
 			</div>
 			<div class="col-2 d-flex align-items-center" style="gap: .5em;">
 				<a class="text-warning" routerLink="/phonebook-update/{{phonebook.id}}"><mdb-icon far icon="edit"></mdb-icon></a>
