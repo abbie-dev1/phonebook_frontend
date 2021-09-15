@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'http://localhost:3000/api/phonebook',
+  url: 'https://abbie-phonebook-api.herokuapp.com/api/phonebook',
 };
