@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  url: 'https://abbie-phonebook-api.herokuapp.com/api/phonebook',
+  url: 'http://localhost:4200',
+  //url: 'https://abbie-phonebook-api.herokuapp.com/api/phonebook',
 };
 
 /*
